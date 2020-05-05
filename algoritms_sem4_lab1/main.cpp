@@ -1,8 +1,8 @@
 #include <iostream>
-#include "TreeMap.h"
+//#include "TreeMap.h"
 
 int main() {
-	TreeMap<std::string, int> map = TreeMap<std::string, int>();
+	/*TreeMap<std::string, int> map = TreeMap<std::string, int>();
 	map.insert("width", 10);
 	map.insert("height", 25);
 	map.insert("border", 80);
@@ -12,6 +12,5 @@ int main() {
 	std::cout << std::endl;
 	map.getValues()->print();
 	std::cout << std::endl;
-	map.print();
-	return 1;
+	map.print();*/
 }

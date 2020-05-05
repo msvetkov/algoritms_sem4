@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "algoritms_sem4_lab1", "algo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "map_test", "map_test\map_test.vcxproj", "{68E32E95-2946-4747-867A-068E7EC4878F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sem4_lab2", "sem4_lab2\sem4_lab2.vcxproj", "{E641F88D-11F5-4512-9B30-809E89DA76AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{68E32E95-2946-4747-867A-068E7EC4878F}.Release|x64.Build.0 = Release|x64
 		{68E32E95-2946-4747-867A-068E7EC4878F}.Release|x86.ActiveCfg = Release|Win32
 		{68E32E95-2946-4747-867A-068E7EC4878F}.Release|x86.Build.0 = Release|Win32
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Debug|x64.ActiveCfg = Debug|x64
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Debug|x64.Build.0 = Debug|x64
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Debug|x86.ActiveCfg = Debug|Win32
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Debug|x86.Build.0 = Debug|Win32
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Release|x64.ActiveCfg = Release|x64
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Release|x64.Build.0 = Release|x64
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Release|x86.ActiveCfg = Release|Win32
+		{E641F88D-11F5-4512-9B30-809E89DA76AF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

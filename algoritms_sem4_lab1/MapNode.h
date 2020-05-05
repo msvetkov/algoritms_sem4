@@ -1,4 +1,3 @@
-#pragma once
 #ifndef MAP_NODE_H
 #define MAP_NODE_H
 
@@ -14,29 +13,61 @@ private:
 	MapNode<K, V>* left;
 	MapNode<K, V>* right;
 public:
-	MapNode(K key, V value);
+	MapNode(K key, V value) {
+		this->key = key;
+		this->value = value;
+		this->parent = nullptr;
+		this->left = nullptr;
+		this->right = nullptr;
+		this->color = Colors::RED;
+	}
 
-	MapNode();
+	MapNode() {
+		this->parent = nullptr;
+		this->left = nullptr;
+		this->right = nullptr;
+		this->color = Colors::BLACK;
+	}
 
-	K getKey();
+	K getKey() {
+		return this->key;
+	}
 
-	V getValue();
+	V getValue() {
+		return this->value;
+	}
 
-	void setColor(Colors color);
+	void setColor(Colors color) {
+		this->color = color;
+	}
 
-	Colors getColor();
+	Colors getColor() {
+		return this->color;
+	}
 
-	void setParent(MapNode<K, V>* parent);
+	void setParent(MapNode<K, V>* parent) {
+		this->parent = parent;
+	}
 
-	MapNode<K, V>* getParent();
+	MapNode<K, V>* getParent() {
+		return this->parent;
+	}
 
-	void setLeft(MapNode<K, V>* left);
+	void setLeft(MapNode<K, V>* left) {
+		this->left = left;
+	}
 
-	MapNode<K, V>* getLeft();
+	MapNode<K, V>* getLeft() {
+		return this->left;
+	}
 
-	void setRight(MapNode<K, V>* right);
+	void setRight(MapNode<K, V>* right) {
+		this->right = right;
+	}
 
-	MapNode<K, V>* getRight();
+	MapNode<K, V>* getRight() {
+		return this->right;
+	}
 };
 
 
