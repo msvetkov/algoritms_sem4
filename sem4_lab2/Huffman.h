@@ -12,7 +12,7 @@ private:
 	int decodeStringMemory;
 	int incodeStringMemory;
 	float compressionRatio;
-	TreeMap<char, bool*> table;
+	TreeMap<char, int>* table;
 
 	void buildTable(Node* root, LinkedList<bool>& code, TreeMap<char, bool*> &table);
 	void buildTree(LinkedList<Node*>& tree);

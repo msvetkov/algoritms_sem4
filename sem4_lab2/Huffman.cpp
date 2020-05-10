@@ -55,11 +55,17 @@ void Huffman::calculate(std::string str) {
 	size_t strLength = str.length();
 
 	for (size_t i = 0; i < strLength; i++) {
-		map->insert(str[i], 1);
-		table.insert(str[i], nullptr);
-		decodeMemory++;
+		int f = 0;
+		if (map->containsKey(str[i])) {
+			f = map->find(str[i]);
+			map->remove(str[i]);
+		} else {
+			table.insert(str[i], nullptr);
+		}
+		map->insert(str[i], f + 1);
+		decodeMemory += sizeof(str[i]);
 	}
-	this->incodeStringMemory = decodeMemory * 8;
+	this->decodeStringMemory = decodeMemory * 8;
 
 	LinkedList<MapNode<char, int>*>* keyValuePairs = map->getNodesList();
 	LinkedList<Node*> tree;
@@ -69,7 +75,6 @@ void Huffman::calculate(std::string str) {
 			new Node(keyValuePair->getKey(), keyValuePair->getValue())
 		);
 	}
-
 
 	this->buildTree(tree);
 
@@ -89,8 +94,9 @@ void Huffman::calculate(std::string str) {
 
 	this->incodedString = incodedString;
 	this->incodeStringMemory = incodeMemory * 8;
+
 	this->compressionRatio = (float) incodeMemory / decodeMemory;
-	this->table = table;
+	this->table = map;
 }
 
 int Huffman::getDecodedStringMemoryInBits() {
@@ -114,7 +120,7 @@ std::string Huffman::getIncodedString() {
 }
 
 void Huffman::printTable() {
-	this->table.print();
+	this->table->print();
 }
 
 

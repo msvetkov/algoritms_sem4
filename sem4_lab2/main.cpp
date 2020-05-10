@@ -1,12 +1,19 @@
 #include "Huffman.h"
+#include <iostream>
+
+using namespace std;
 
 int main() {
-	std::string sourceString = "ExampleText";
+	cout << "Enter string > ";
+	string sourceString;
+	cin >> sourceString;
 	Huffman* huffman = new Huffman(sourceString);
-	std::cout << "Source string: " << huffman->getDecodedString() << std::endl;
-	std::cout << "Result string: " << huffman->getIncodedString() << std::endl;
-	std::cout << "Compression ratio: " << huffman->getCompressionRatioInPerc() << "%\n";
-	std::cout << "Table of symbols and frequencies:\n";
+	cout << huffman->getDecodedStringMemoryInBits() << endl;
+	cout << huffman->getIncodedStringMemoryInBits() << endl;
+	cout << "Source string: " << huffman->getDecodedString() << endl;
+	cout << "Result string: " << huffman->getIncodedString() << endl;
+	cout << "Compression ratio: " << huffman->getCompressionRatioInPerc() << "%\n";
+	cout << "Table of symbols and frequencies:\n";
 	huffman->printTable();
 	return 1;
 }
