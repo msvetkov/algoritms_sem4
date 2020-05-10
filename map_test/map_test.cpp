@@ -1,11 +1,6 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
 #include "../algoritms_sem4_lab1/TreeMap.h"
-//#include "../algoritms_sem4_lab1/TreeMap.cpp"
-//#include "../algoritms_sem4_lab1/LinkedList.cpp"
-//#include "../algoritms_sem4_lab1/MapNode.cpp"
-//#include "../algoritms_sem4_lab1/ListNode.cpp"
-
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -53,11 +48,6 @@ namespace maptest {
 
 		TEST_METHOD(clear) {
 			auto* list = new LinkedList<std::string>();
-			/*list->insert("border");
-			list->insert("height");
-			list->insert("margin");
-			list->insert("padding");
-			list->insert("width");*/
 			Assert::IsFalse(map.getKeys()->equals(list));
 			map.clear();
 			Assert::IsTrue(map.getKeys()->equals(list));
