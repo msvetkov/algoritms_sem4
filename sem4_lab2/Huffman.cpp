@@ -122,5 +122,3 @@ std::string Huffman::getIncodedString() {
 void Huffman::printTable() {
 	this->table->print();
 }
-
-

@@ -1,0 +1,5 @@
+London - Berlin; 25; 50
+Berlin - Rome; 11; none
+Berlin - Paris; 34; 30
+Rome - Moscow; none; 15
+Moscow - Paris; 40; none
