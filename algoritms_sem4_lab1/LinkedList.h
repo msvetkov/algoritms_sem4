@@ -18,8 +18,8 @@ public:
 	}
 
 	T at(size_t id) {
-		if (id > this->size) {
-			throw std::invalid_argument("Index is outside of list");
+		if (id > this->size - 1) {
+			throw std::out_of_range("Index is outside of list");
 		}
 
 		ListNode<T>* node = this->head;
@@ -36,10 +36,23 @@ public:
 		if (this->head) {
 			this->tail->setNext(newNode);
 			this->tail = newNode;
-		}
-		else {
+		} else {
 			this->head = newNode;
 			this->tail = this->head;
+		}
+
+		this->size++;
+	}
+
+	void insertFront(T value) {
+		ListNode<T>* newNode = new ListNode<T>(value);
+
+		if (!this->head) {
+			this->head = newNode;
+			this->tail = this->head;
+		} else {
+			newNode->setNext(this->head);
+			this->head = newNode;
 		}
 
 		this->size++;
@@ -54,6 +67,28 @@ public:
 		this->size += list->size();
 	}
 
+	void remove(size_t index) {
+		if (this->head != nullptr && index >= 0 && index <= this->size - 1) {
+			if (index == 0) {
+				this->removeFront();
+			} else if (index == this->size - 1) {
+				this->removeLast();
+			} else if (index != 0) {
+				ListNode<T>* current = this->head;
+				for (size_t i = 0; i < index - 1; i++) {
+					current = current->getNext();
+				}
+
+				ListNode<T>* next = current->getNext();
+				current->setNext(current->getNext()->getNext());
+				delete next;
+				this->size--;
+			}
+		} else {
+			throw std::out_of_range("out_of_range");
+		}
+	}
+
 	void removeLast() {
 		if (this->head) {
 			ListNode<T>* current = this->head;
@@ -61,8 +96,7 @@ public:
 				delete current;
 				this->head = nullptr;
 				this->tail = nullptr;
-			}
-			else {
+			} else {
 				while (current->getNext() != this->tail) {
 					current = current->getNext();
 				}
